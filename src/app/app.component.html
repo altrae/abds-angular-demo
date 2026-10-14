@@ -1,0 +1,170 @@
+<div
+  class="bg-blue-500 text-white text-center align-center flex justify-center"
+  role="banner"
+>
+  <abds-icon icon="task-list-pen" size="5xl"></abds-icon>
+  <h1 class="self-center">Welcome to our Angular example app</h1>
+</div>
+
+<div class="flex flex-col gap-4 items-center justify-center my-4">
+  <section class="flex flex-col gap-y-2">
+    <h2>
+      Shopping list
+      <abds-badge palette="warning">Item count: {{ itemCount }}</abds-badge>
+    </h2>
+
+    <ul class="flex flex-col gap-y-2" id="shopping-list"></ul>
+
+    <div class="flex gap-x-2 items-center justify-center mt-2">
+      <abds-button icon-start="subtract" (click)="resetItems()" palette="brand">Remove Completed</abds-button>
+      <abds-button icon-start="add" (click)="addListItem()" palette="brand">Add Item</abds-button>
+    </div>
+  </section>
+
+  <section>
+    <form class="text-left">
+      <h2 class="text-center">
+        Favorite Food Form
+
+        <img
+          alt=""
+          class="inline"
+          id="customIcon"
+          src="https://img.icons8.com/office/30/000000/kawaii-taco.png"
+        />
+
+        <abds-tooltip for="customIcon" open placement="right">
+          It's TACO TUUUUESDAY!!!
+        </abds-tooltip>
+      </h2>
+
+      <section class="flex flex-col gap-y-2">
+        <h3>Favorite Fruit</h3>
+
+        <div class="flex gap-x-4 items-center">
+          <abds-radio name="fruit" value="apple">
+            <div class="flex gap-x-1 items-center">
+              Apple
+
+              <i id="apple" class="fas fa-apple-whole text-red-500">
+                <abds-tooltip for="apple">Pick me! Pick ME!!</abds-tooltip>
+              </i>
+            </div>
+          </abds-radio>
+
+          <abds-radio name="fruit" value="banana">Banana</abds-radio>
+          <abds-radio name="fruit" value="cherry">Cherry</abds-radio>
+
+          <abds-radio>
+            <div class="flex gap-x-1 items-center">
+              Lemon
+              <i class="fas fa-lemon text-yellow-500"></i>
+            </div>
+          </abds-radio>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-y-2">
+        <h3>Favorite Vegetable</h3>
+
+        <div class="flex gap-x-4 items-center">
+          <abds-checkbox name="veggie" value="carrot">
+            <div class="flex gap-x-1 items-center">
+              Carrot
+
+              <i id="carrot" class="fas fa-carrot text-orange-500">
+                <abds-tooltip for="carrot">
+                  Ehhhh, what's up Doc?
+                </abds-tooltip>
+              </i>
+            </div>
+          </abds-checkbox>
+
+          <abds-checkbox name="veggie" value="broccoli">
+            Broccoli
+          </abds-checkbox>
+
+          <abds-checkbox name="veggie" value="potato" tooltip="pota-toe">Potato</abds-checkbox>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-y-2">
+        <h3>Dietary Restrictions</h3>
+
+        <div class="flex gap-x-4 items-center">
+          <abds-switch name="diet" value="vegan" tooltip="no meat">Vegan</abds-switch>
+
+          <abds-switch name="diet" value="vegan">
+            <div class="flex gap-x-1 items-center">
+              Carnivore
+
+              <i id="dragon" class="fas fa-dragon text-green-500">
+                <abds-tooltip for="dragon">ROOAARR!!!</abds-tooltip>
+              </i>
+            </div>
+          </abds-switch>
+
+          <abds-switch name="diet" value="glutenfree">Gluten Free</abds-switch>
+          <abds-switch name="diet" value="dairyfree">Dairy Free</abds-switch>
+          <abds-button class="block" type="submit">Submit</abds-button>
+        </div>
+      </section>
+    </form>
+  </section>
+
+  <section class="flex flex-col gap-y-2">
+    <h2 class="text-center">Toggle Playground</h2>
+
+    <span [class]="darkMode ? 'bg-black text-white' : ''">
+      This sentence will change text and background color.
+    </span>
+
+    <abds-switch (click)="setDarkMode()">Toggle style</abds-switch>
+  </section>
+
+  <section id="modal">
+    <abds-button
+      (click)="toggleModal()"
+      appearance="outline"
+      class="fixed bottom-1 right-1"
+      palette="destructive"
+    >
+      Important information
+    </abds-button>
+
+    <abds-modal
+      header-text="Not important information"
+      icon="information-circle"
+      id="modal-1"
+      palette="danger"
+    >
+      <p slot="modal-header">Modal header which shouldn't show</p>
+
+      <section class="flex flex-col gap-4" slot="modal-body">
+        @for (paragraph of generateParagraphs(20); track $index) {
+          <p innerHTML="{{ paragraph }}"></p>
+        }
+      </section>
+
+      <div slot="modal-footer">
+        <abds-button class="mr-1" appearance="outline" palette="neutral">
+          This button will not close modal
+
+          <abds-tooltip>
+            To close modal, click the X button in the top right corner.
+          </abds-tooltip>
+        </abds-button>
+
+        <abds-button>
+          This one either
+
+          <abds-tooltip>
+            To close modal, click the X button in the top right corner.
+          </abds-tooltip>
+        </abds-button>
+      </div>
+
+      <p>no slot specified</p>
+    </abds-modal>
+  </section>
+</div>

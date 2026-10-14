@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Let ABDS's shadow-host styles supply padding, including badge size variants.
+     Keep this in the base layer so it rolls back Preflight and utilities still win. */
+  abds-badge,
+  abds-tooltip {
+    padding: revert-layer;
+  }
+
+  /* The light badge palette supplies its own border. */
+  abds-badge {
+    border: revert-layer;
+  }
+}
