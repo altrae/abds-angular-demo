@@ -55,6 +55,9 @@ to preserve its previous behavior with Angular 22's changed defaults.
 
 ## abds component usage
 
+See the [ABDS component reference](ABDS_COMPONENTS.md) for every component's props,
+defaults, variations, slots, events, methods, and the full icon catalog for version 3.4.3.
+
 Pre requisites:
 
 1. Add `@abds/components` into your `package.json` as a dependency
