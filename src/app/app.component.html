@@ -1,5 +1,5 @@
 <div
-  class="bg-blue-500 text-white text-center align-center flex justify-center"
+  class="bg-blue-700 flex gap-4 justify-center items-center p-4 text-white"
   role="banner"
 >
   <abds-icon icon="task-list-pen" size="5xl"></abds-icon>
@@ -22,7 +22,7 @@
   </section>
 
   <section>
-    <form class="text-left">
+    <form class="flex flex-col gap-4 text-left">
       <h2 class="text-center">
         Favorite Food Form
 
@@ -41,7 +41,7 @@
       <section class="flex flex-col gap-y-2">
         <h3>Favorite Fruit</h3>
 
-        <div class="flex gap-x-4 items-center">
+        <div class="flex flex-col md:flex-row gap-4 md:items-center">
           <abds-radio name="fruit" value="apple">
             <div class="flex gap-x-1 items-center">
               Apple
@@ -67,7 +67,7 @@
       <section class="flex flex-col gap-y-2">
         <h3>Favorite Vegetable</h3>
 
-        <div class="flex gap-x-4 items-center">
+        <div class="flex flex-col md:flex-row gap-4 md:items-center">
           <abds-checkbox name="veggie" value="carrot">
             <div class="flex gap-x-1 items-center">
               Carrot
@@ -91,7 +91,7 @@
       <section class="flex flex-col gap-y-2">
         <h3>Dietary Restrictions</h3>
 
-        <div class="flex gap-x-4 items-center">
+        <div class="flex flex-col md:flex-row gap-4 md:items-center">
           <abds-switch name="diet" value="vegan" tooltip="no meat">Vegan</abds-switch>
 
           <abds-switch name="diet" value="vegan">
